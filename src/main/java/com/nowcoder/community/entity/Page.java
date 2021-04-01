@@ -83,7 +83,7 @@ public class Page {
      */
     public int getFrom() {
         int from = current - 2;
-        return Math.max(from, 1);
+        return from < 1 ? 1 : from;
     }
 
     /**
@@ -94,7 +94,7 @@ public class Page {
     public int getTo() {
         int to = current + 2;
         int total = getTotal();
-        return Math.min(to, total);
+        return to > total ? total : to;
     }
 
 }
